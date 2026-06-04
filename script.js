@@ -18,6 +18,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 /* ===== HERO COUNTER ANIMATION ===== */
 function animateCounter(el, target, duration = 1800) {
   const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
   const start = performance.now();
   const isLarge = target >= 1000;
 
@@ -28,17 +29,17 @@ function animateCounter(el, target, duration = 1800) {
     const value = Math.floor(ease * target);
 
     if (isLarge) {
-      el.textContent = prefix + value.toLocaleString();
+      el.textContent = prefix + value.toLocaleString() + suffix;
     } else {
-      el.textContent = prefix + value;
+      el.textContent = prefix + value + suffix;
     }
 
     if (progress < 1) requestAnimationFrame(tick);
     else {
       if (isLarge) {
-        el.textContent = prefix + target.toLocaleString();
+        el.textContent = prefix + target.toLocaleString() + suffix;
       } else {
-        el.textContent = prefix + target;
+        el.textContent = prefix + target + suffix;
       }
     }
   };
