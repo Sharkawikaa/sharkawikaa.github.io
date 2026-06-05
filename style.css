@@ -562,6 +562,26 @@ img { max-width: 100%; }
   color: #000;
   flex-shrink: 0;
 }
+.brand-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.platform-badges {
+  display: flex;
+  gap: 6px;
+}
+.platform-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-meta { background: rgba(6,104,225,0.1); color: #0668e1; border: 1px solid rgba(6,104,225,0.2); }
+.badge-tiktok { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
 .brand-info h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
 .brand-info p { font-size: 13px; color: var(--text-muted); font-family: var(--font-body); line-height: 1.6; margin-bottom: 10px; }
 .brand-spend {
