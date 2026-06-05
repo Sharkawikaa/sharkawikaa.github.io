@@ -582,6 +582,9 @@ img { max-width: 100%; }
 }
 .badge-meta { background: rgba(6,104,225,0.1); color: #0668e1; border: 1px solid rgba(6,104,225,0.2); }
 .badge-tiktok { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.badge-active { background: rgba(46,204,113,0.1); color: #2ecc71; border: 1px solid rgba(46,204,113,0.2); }
+.badge-inactive { background: rgba(149,165,166,0.1); color: #95a5a6; border: 1px solid rgba(149,165,166,0.2); }
+.badge-experimental { background: rgba(241,196,15,0.1); color: #f1c40f; border: 1px solid rgba(241,196,15,0.2); }
 .brand-info h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
 .brand-info p { font-size: 13px; color: var(--text-muted); font-family: var(--font-body); line-height: 1.6; margin-bottom: 10px; }
 .brand-spend {
