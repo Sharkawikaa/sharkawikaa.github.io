@@ -584,9 +584,12 @@ img { max-width: 100%; }
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 .platform-badges {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
 }
 .platform-badge {
@@ -755,6 +758,7 @@ body::before {
   .result-card-large { grid-column: span 1; }
   .result-card-wide { grid-column: span 1; }
   .brands-grid { grid-template-columns: 1fr; }
+  .brand-card { flex-direction: column; padding: 24px; gap: 16px; }
   .hero-stats { flex-direction: column; gap: 24px; }
   .hero-stat-divider { width: 48px; height: 1px; }
   .hero-actions { flex-direction: column; align-items: center; }
