@@ -345,7 +345,7 @@ img { max-width: 100%; }
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--text-dim);
-  animation: fadeUp 0.6s ease 0.8s both;
+  animation: fadeUpCenter 0.6s ease 0.8s both;
 }
 .scroll-line {
   width: 1px;
@@ -360,8 +360,12 @@ img { max-width: 100%; }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUpCenter {
+  from { opacity: 0; transform: translate(-50%, 40px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
 }
 
 /* ===== ABOUT ===== */
