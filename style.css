@@ -519,6 +519,21 @@ img { max-width: 100%; }
   font-family: var(--font-body);
   line-height: 1.7;
 }
+.result-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  color: #2ecc71;
+  background: rgba(46, 204, 113, 0.08);
+  border: 1px solid rgba(46, 204, 113, 0.2);
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+}
 .result-metrics { padding: 8px 0; }
 .metric-label {
   display: block;
