@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Buying Report - Touch Store</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* REPORT SPECIFIC STYLES ADDED ON TOP OF PORTFOLIO DESIGN SYSTEM */
+    body {
+      background: var(--bg);
+      padding-bottom: 60px;
+    }
+    .report-header {
+      padding: 60px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-1);
+    }
+    .report-client {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .report-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .report-date {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    
+    .report-section {
+      padding: 60px 0;
+    }
+    .report-section-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .report-section-title::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 24px;
+      background: var(--gold);
+      border-radius: 4px;
+    }
+    
+    .insight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .insight-card {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .insight-card.success { border-top: 3px solid #2ecc71; }
+    .insight-card.learning { border-top: 3px solid #f1c40f; }
+    
+    .insight-card h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .insight-card p {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    
+    .report-table-wrapper {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow-x: auto;
+    }
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 14px;
+    }
+    .report-table th {
+      padding: 20px 24px;
+      color: var(--text-dim);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 11px;
+      border-bottom: 1px solid var(--border);
+    }
+    .report-table td {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .report-table tr:last-child td { border-bottom: none; }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .status-active { background: rgba(46, 204, 113, 0.1); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.2); }
+    .status-paused { background: rgba(231, 76, 60, 0.1); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.2); }
+    
+    @media (max-width: 768px) {
+      .insight-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="report-header">
+    <span class="report-client">Client: Touch Store</span>
+    <h1 class="report-title">Monthly Performance Review</h1>
+    <div class="report-date">Reporting Period: June 1 - June 30, 2026</div>
+  </header>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <section class="report-section">
+    <div class="container">
+      <h2 class="report-section-title">Executive Summary</h2>
+      
+      <div class="results-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="result-card">
+          <div class="result-num"><span class="result-highlight">52.6K</span><span class="result-unit" style="font-size:16px">EGP</span></div>
+          <div class="result-label">Tracked Revenue</div>
+          <span class="result-delta">Meta Ads Tracking</span>
+        </div>
+        <div class="result-card">
+          <div class="result-num"><span class="result-big">5.34x</span></div>
+          <div class="result-label">Blended ROAS</div>
+          <span class="result-delta">Target: 4.00x</span>
+        </div>
+        <div class="result-card">
+          <div class="result-num"><span class="result-big">9.8K</span><span class="result-unit" style="font-size:16px">EGP</span></div>
+          <div class="result-label">Total Ad Spend</div>
+          <span class="result-delta">Meta Ads Tracking</span>
+        </div>
+        <div class="result-card">
+          <div class="result-num"><span class="result-big">176</span><span class="result-unit" style="font-size:16px">EGP</span></div>
+          <div class="result-label">Cost Per Acquisition (CPA)</div>
+          <span class="result-delta">56 Total Purchases</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS & NARRATIVE -->
+  <section class="report-section" style="background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <h2 class="report-section-title">Performance Narrative</h2>
+      
+      <div class="insight-grid">
+        <!-- WHAT WORKED -->
+        <div class="insight-card success">
+          <h3>✅ Successes & What Worked</h3>
+          <p>We saw a strong month overall, finishing well above our baseline ROAS targets. The newly introduced Advantage+ Shopping Campaign (ASC+) structure allowed us to stabilize the CPA.</p>
+          <p><strong>Key Driver:</strong> The "Unboxing" video creative format performed exceptionally well, achieving a high hook-rate which lowered our overall Cost Per Click (CPC) to healthy levels.</p>
+        </div>
+        
+        <!-- WHAT DIDN'T WORK / LEARNINGS -->
+        <div class="insight-card learning">
+          <h3>⚠️ Friction & Key Learnings</h3>
+          <p>While the overall CPA is healthy at 176 EGP, our Top-of-Funnel static image ads suffered from creative fatigue towards the end of the month, causing CPA to spike slightly in week 4.</p>
+          <p><strong>Action Taken:</strong> We paused the fatigued static ads and are re-allocating that budget toward fresh video creatives and dynamic catalog ads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN BREAKDOWN -->
+  <section class="report-section">
+    <div class="container">
+      <h2 class="report-section-title">Campaign Breakdown</h2>
+      
+      <div class="report-table-wrapper">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Campaign Name</th>
+              <th>Status</th>
+              <th>Spend</th>
+              <th>Revenue</th>
+              <th>Purchases</th>
+              <th>CPA</th>
+              <th>ROAS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ASC+ | Touch Store | Broad</td>
+              <td><span class="status-badge status-active">Active</span></td>
+              <td>7,240.50 EGP</td>
+              <td>41,500.00 EGP</td>
+              <td>42</td>
+              <td>172.39 EGP</td>
+              <td>5.73x</td>
+            </tr>
+            <tr>
+              <td>RETARGETING | DPA Catalog</td>
+              <td><span class="status-badge status-active">Active</span></td>
+              <td>1,500.00 EGP</td>
+              <td>9,850.00 EGP</td>
+              <td>12</td>
+              <td>125.00 EGP</td>
+              <td>6.56x</td>
+            </tr>
+            <tr>
+              <td>CONV | Static Testing | Lookalikes</td>
+              <td><span class="status-badge status-paused">Paused</span></td>
+              <td>1,118.74 EGP</td>
+              <td>1,325.00 EGP</td>
+              <td>2</td>
+              <td>559.37 EGP</td>
+              <td>1.18x</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div style="margin-top: 24px; text-align: center; opacity: 0.6; font-size: 12px; font-family: var(--font-body);">
+        * Note: Campaign breakdown figures are for illustrative purposes. Edit HTML to match specific ad account dashboard data.
+      </div>
+    </div>
+  </section>
+  
+  <!-- NEXT STEPS -->
+  <section class="report-section" style="background: var(--bg-1); border-top: 1px solid var(--border);">
+    <div class="container">
+      <h2 class="report-section-title">Action Plan for Next Month</h2>
+      <ul style="font-family: var(--font-body); color: var(--text-muted); line-height: 1.8; list-style-type: disc; margin-left: 20px;">
+        <li>Scale budget on ASC+ campaign by 15% to capitalize on winning video creatives.</li>
+        <li>Launch 3 new video variations focusing on the "Problem/Solution" hook.</li>
+        <li>Implement advanced CAPI (Conversions API) matching to improve tracking accuracy.</li>
+        <li>Test a new Lookalike Audience (1%-3%) based on high-LTV purchasers.</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
